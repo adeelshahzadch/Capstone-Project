@@ -1,8 +1,8 @@
-# 🤖 Multi-Agent RAG Pipeline (CrewAI)
+#  Multi-Agent RAG Pipeline (CrewAI)
 
 This project implements a sophisticated **Retrieval-Augmented Generation (RAG)** pipeline using the **CrewAI** framework. It leverages a team of specialized AI agents (Retrieval, Reasoning, Reflection, and Evaluation) to process user queries, retrieve relevant context from a vector store (**Pinecone**), generate grounded answers, refine those answers, and finally, evaluate the quality of the output.
 
-## ✨ Features
+##  Features
 
 * **Multi-Agent Workflow:** A structured, sequential pipeline with agents dedicated to retrieval, reasoning, refinement, and evaluation.
 * **Data Ingestion:** Supports loading and processing both **PDF documents** and **audio transcripts** via `PyPDFLoader` and **Whisper** (simulated in provided code).
@@ -15,13 +15,13 @@ This project implements a sophisticated **Retrieval-Augmented Generation (RAG)**
 * **Interactive CLI:** The entry point (`app_final.py`) provides an interactive command-line interface for database initialization and querying.
 * **Robust Logging:** Uses a custom `logger.py` to track workflow and suppress verbose external library logs.
 
-## ⚙️ Project Structure
+## Project Structure
 
 The project is highly modular, separating concerns into dedicated directories:
 
  ![Project Structure](2.png)
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -65,7 +65,7 @@ The project is highly modular, separating concerns into dedicated directories:
 3.  **Interactive Query Loop:**
     * Enter your query. The full 4-agent RAG crew is executed: **Retrieve** (from Pinecone) $\rightarrow$ **Reason** (Generate Answer) $\rightarrow$ **Reflect** (Refine Answer) $\rightarrow$ **Evaluate** (Score Report).
 
-## 🛠 Key Components
+##  Key Components
 
 The system is built around three primary components:
 
