@@ -100,7 +100,7 @@ This file defines the strict LLM prompts that govern the quality of the output:
 
 ## Project Architecture
 
-This capstone project extends my earlier work in RAG-based chatbot application (HW4) by developing a fully agentic AI system capable of autonomous reasoning, tool execution, and self-reflection. The objective is to build an intelligent workflow where the agent not only retrieves and processes information using a well-structured RAG pipeline, but also evaluates its own decisions, corrects errors, and performs meaningful actions through tool-calling.
+This capstone project extends my earlier work in RAG-based chatbot application by developing a fully agentic AI system capable of autonomous reasoning, tool execution, and self-reflection. The objective is to build an intelligent workflow where the agent not only retrieves and processes information using a well-structured RAG pipeline, but also evaluates its own decisions, corrects errors, and performs meaningful actions through tool-calling.
 
 The system follows a complete pipeline—data preparation, contextualization, retrieval design, multi-step reasoning, reflection, and evaluation. 
 
