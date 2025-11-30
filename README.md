@@ -2,6 +2,25 @@
 
 This project implements a sophisticated **Retrieval-Augmented Generation (RAG)** pipeline using the **CrewAI** framework. It leverages a team of specialized AI agents (Retrieval, Reasoning, Reflection, and Evaluation) to process user queries, retrieve relevant context from a vector store (**Pinecone**), generate grounded answers, refine those answers, and finally, evaluate the quality of the output.
 
+## Project Architecture
+
+This capstone project extends my earlier work in RAG-based chatbot application by developing a fully agentic AI system capable of autonomous reasoning, tool execution, and self-reflection. The objective is to build an intelligent workflow where the agent not only retrieves and processes information using a well-structured RAG pipeline, but also evaluates its own decisions, corrects errors, and performs meaningful actions through tool-calling.
+
+The system follows a complete pipeline—data preparation, contextualization, retrieval design, multi-step reasoning, reflection, and evaluation. 
+
+This project showcases how modern agentic systems can integrate data, reasoning, and action into a cohesive and reliable solution.
+
+This document outlines the architecture and sequential data flow of the Interactive Agent Crew, which is responsible for processing a user query, retrieving context from Pinecone, generating a refined answer, and providing a final quality evaluation.
+
+CrewAI transforms a complex RAG pipeline into a collaborative team of specialized agents, each handling one aspect (Initialization, retrieval, reasoning, refinement, scoring) with built-in orchestration, error handling, and production features.
+
+### Architecture Diagram
+
+Below is the architecture diagram illustrating the sequential data flow and agentic system:
+
+![RAG Pipeline Architecture](1.png)
+
+
 ##  Features
 
 * **Multi-Agent Workflow:** A structured, sequential pipeline with agents dedicated to retrieval, reasoning, refinement, and evaluation.
@@ -97,24 +116,6 @@ This file defines the strict LLM prompts that govern the quality of the output:
 * **`build_strict_prompt`:** Used by the **Reasoning Agent** to ensure the answer is **strictly grounded** in the retrieved context. If context is insufficient, the required response is **"Not found in context."**
 * **`refine_answer`:** Used by the **Reflection Agent** to improve clarity, structure, and conciseness without adding new facts.
 * **`score_answer`:** Used by the **Evaluation Agent** as the final check, implementing the LLM-as-a-judge pattern to score the answer against the criteria: **Accuracy**, **Relevance**, and **Clarity**.
-
-## Project Architecture
-
-This capstone project extends my earlier work in RAG-based chatbot application by developing a fully agentic AI system capable of autonomous reasoning, tool execution, and self-reflection. The objective is to build an intelligent workflow where the agent not only retrieves and processes information using a well-structured RAG pipeline, but also evaluates its own decisions, corrects errors, and performs meaningful actions through tool-calling.
-
-The system follows a complete pipeline—data preparation, contextualization, retrieval design, multi-step reasoning, reflection, and evaluation. 
-
-This project showcases how modern agentic systems can integrate data, reasoning, and action into a cohesive and reliable solution.
-
-This document outlines the architecture and sequential data flow of the Interactive Agent Crew, which is responsible for processing a user query, retrieving context from Pinecone, generating a refined answer, and providing a final quality evaluation.
-
-CrewAI transforms a complex RAG pipeline into a collaborative team of specialized agents, each handling one aspect (Initialization, retrieval, reasoning, refinement, scoring) with built-in orchestration, error handling, and production features.
-
-### Architecture Diagram
-
-Below is the architecture diagram illustrating the sequential data flow and agentic system:
-
-![RAG Pipeline Architecture](1.png)
 
 ## Environment Variables
 
