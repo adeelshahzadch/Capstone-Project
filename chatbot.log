@@ -1,0 +1,1090 @@
+2025-11-30 08:01:17,687 | INFO     | ========================================
+2025-11-30 08:01:17,687 | INFO     |         RAG CHATBOT SETUP MENU        
+2025-11-30 08:01:17,688 | INFO     | ========================================
+2025-11-30 08:01:17,688 | INFO     | Select your Vector Database option:
+2025-11-30 08:01:17,688 | INFO     |   [1] Pinecone   - Cloud Setup
+2025-11-30 08:01:17,689 | INFO     |   [2] Exit       - Quit the setup
+2025-11-30 08:01:17,689 | INFO     | ========================================
+2025-11-30 08:01:17,689 | INFO     | Enter your choice (1, 2): 
+2025-11-30 08:02:23,191 | INFO     | You selected **Pinecone** setup.
+2025-11-30 08:02:23,192 | INFO     | RAG Pipeline is executing for each step.
+2025-11-30 08:02:23,235 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:02:25,047 | INFO     | Insert Embeddings Tool calling...
+2025-11-30 08:02:25,047 | INFO     | Insert Embeddings Tool: Storing PDF and Audio embeddings in the vector store and returning the index.
+2025-11-30 08:02:26,140 | INFO     | 	Index 'rag-index' already exists. Deleting it just for assignment purpose.
+2025-11-30 08:02:32,491 | INFO     | 	Creating new index 'rag-index'...
+2025-11-30 08:02:33,382 | INFO     | Insert Embeddings Tool: 1 -  Data loading and processing started.
+2025-11-30 08:02:33,384 | INFO     | Insert Embeddings Tool: Loading and extracting text from PDF...
+2025-11-30 08:02:33,384 | INFO     | Insert Embeddings Tool: PDF loaded successfully.
+2025-11-30 08:02:35,554 | INFO     | Insert Embeddings Tool: Loading Whisper model...
+2025-11-30 08:02:35,554 | INFO     | Insert Embeddings Tool: Model loaded. Transcribing audio.
+2025-11-30 08:06:10,161 | INFO     | Insert Embeddings Tool: Transcription completed.
+2025-11-30 08:06:10,176 | INFO     | Insert Embeddings Tool: 2 -  Chunking documents.
+2025-11-30 08:06:10,177 | INFO     | Insert Embeddings Tool: Total numbers of PDF chunks: 19
+2025-11-30 08:06:10,184 | INFO     | Insert Embeddings Tool: Total numbers of Audio chunks: 32
+2025-11-30 08:06:10,185 | INFO     | Insert Embeddings Tool: 3 -  Embedding.
+2025-11-30 08:06:12,623 | INFO     | Insert Embeddings Tool: 4 -  Prepare vectors to store in Pinecone.
+2025-11-30 08:06:16,393 | INFO     | Insert Embeddings Tool: 4 -  Pinecone Index has been updated with new embeddings.
+2025-11-30 08:06:16,395 | INFO     | Insert Embeddings Tool: Pinecone index has been updated successfully.
+2025-11-30 08:06:16,398 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:11:57,576 | INFO     | Setting-up the Crew for Retrieval, Reasoning and Reflection Agents...
+2025-11-30 08:11:57,646 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:11:58,778 | INFO     | Retrieve Context Tool: Searching for relevant context for query: (who is Maksym Lypivskyi?)
+2025-11-30 08:11:58,799 | INFO     | Retrieve Context Tool: Generating embedding for query: who is Maksym Lypivskyi?
+2025-11-30 08:11:58,938 | WARNING  | Trace batch initialization returned status 401. Continuing without tracing.
+2025-11-30 08:12:02,470 | INFO     | Retrieve Context Tool: Query vector dimension 384
+2025-11-30 08:12:02,483 | INFO     | Retrieve Context Tool: Context : 
+ - Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+2025-11-30 08:12:02,523 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:12:04,844 | INFO     | Reasoning Tool : Received context from vector database 
+ - Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+2025-11-30 08:12:05,114 | INFO     | Reasoning Tool : Formatted Prompt:
+
+You are an expert RAG assistant. You MUST answer strictly using the content provided in <context>. 
+The context may contain noise, transcription errors, repetition, or partial sentences. Your job is to:
+
+1. Identify clean, meaningful facts that directly answer the question.
+2. Ignore noise such as repeated lines, slide numbers, broken sentences, filler words, or incomplete phrases.
+3. If parts of the answer appear fragmented across multiple places in the context, combine them logically WITHOUT adding new information.
+4. Even if the context is messy or incomplete, extract and synthesize whatever relevant information exists.
+5. ONLY reply with 'Not found in context' if the context contains absolutely NO information related to the question.
+
+Do NOT invent facts. Do NOT add external knowledge.
+
+<context>
+- Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+</context>
+
+Question: who is Maksym Lypivskyi?
+
+Now provide the answer using ONLY the information found in the cleaned interpretation of the context.
+
+2025-11-30 08:12:07,306 | INFO     | Reasoning Tool : Generated Answer from LLM > 
+ Maksym Lypivskyi is the Head of Cloud Platforms & AI Director. He has 9 years of experience at Ciklum driving large-scale cloud and software delivery initiatives and 3 years specializing in AI. His core interest is making AI systems reliable, production-ready, and business-impactful.
+2025-11-30 08:12:07,309 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:12:08,284 | INFO     | Reflection Agent: Checking if answer found in output: Maksym Lypivskyi is the Head of Cloud Platforms & AI Director. He has 9 years of experience at Ciklum driving large-scale cloud and software delivery initiatives and 3 years specializing in AI. His core interest is making AI systems reliable, production-ready, and business-impactful.
+2025-11-30 08:12:08,288 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:12:09,918 | INFO     | Refine Answer Tool: Initialed.
+2025-11-30 08:12:10,214 | INFO     | 	Refine Answer Tool : Formatted Prompt:
+
+            You are a critical reviewer AI. Improve the answer below by making it:
+            - clearer,
+            - more accurate,
+            - better structured,
+            - more complete (ONLY using the given context),
+            - different in wording (no verbatim repetition).
+
+            Original Answer:
+            Maksym Lypivskyi is the Head of Cloud Platforms & AI Director. With 9 years at Ciklum leading cloud and software delivery, and 3 years specializing in AI, his focus is on creating reliable, production-ready, and impactful AI systems for business.
+
+            Provide an improved version:
+            
+2025-11-30 08:12:12,733 | INFO     | Refine Answer Tool: Refined answer >  
+ Maksym Lypivskyi currently serves as the Head of Cloud Platforms and the AI Director. Over the past nine years, he has been instrumental at Ciklum in steering the direction of cloud services and software delivery. Additionally, he has dedicated three of those years to specializing in artificial intelligence. His primary goal is to develop robust AI systems that are not only reliable and production-ready but also deliver significant impacts for businesses..
+2025-11-30 08:12:12,764 | INFO     | Evaluation Agent: Checking context for answer
+2025-11-30 08:12:12,767 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:12:16,089 | INFO     | Score Answer Tool: Initializing evaluation...
+2025-11-30 08:12:16,090 | INFO     | 	Scorer: Generating scoring prompt.
+2025-11-30 08:12:16,099 | INFO     | 	Scorer: Sending detailed prompt to LLM ...
+2025-11-30 08:12:18,303 | INFO     | 	Scorer: Raw LLM Output Received: 
+ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer is accurate, relevant, and clearly presents Maksym Lypivskyi's professional role and expertise as supported by the retrieved context.
+2025-11-30 08:12:18,317 | INFO     | Score Answer Tool: Generated Report> 
+
+    --- Evaluation Report ---
+    Query: "who is Maksym Lypivskyi?"
+    
+    ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer is accurate, relevant, and clearly presents Maksym Lypivskyi's professional role and expertise as supported by the retrieved context.
+    
+    ---
+    
+2025-11-30 08:15:35,528 | INFO     | Setting-up the Crew for Retrieval, Reasoning and Reflection Agents...
+2025-11-30 08:15:35,555 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:15:36,835 | INFO     | Retrieve Context Tool: Searching for relevant context for query: (can RAG work without a vector database?)
+2025-11-30 08:15:36,848 | INFO     | Retrieve Context Tool: Generating embedding for query: can RAG work without a vector database?
+2025-11-30 08:15:38,912 | INFO     | Retrieve Context Tool: Query vector dimension 384
+2025-11-30 08:15:38,934 | INFO     | Retrieve Context Tool: Context : 
+ - What is RAG?
+- Retrieval‑augmented generation (RAG) is a
+- pattern that augments an LLM by retrieving
+- relevant information from external sources at
+- query time and injecting it into the prompt. 12
+- RAG real world use cases
+- ● AI Chatbots: RAG provides accurate answers from internal
+- knowledge bases (e.g., support wikis, legal documents). OpenAI
+- emphasises that RAG is valuable when the content is not part of
+- the base model’s knowledge .
+- ● Search & discovery: Search systems combine keyword and
+- vector search to surface relevant documents in e‑commerce,
+- research and legal discovery.
+- ● AI Copilots: Tools like Supabase AI Copilots use vector
+- databases to ground responses in proprietary data and maintain
+- multi‑tenant isolation .
+- ● Long‑context reasoning: Databricks’ long‑context benchmark
+- shows that Google’s Gemini 2.5 models can maintain consistent
+- performance on RAG tasks up to two million tokens (longer than
+- most models), whereas OpenAI’s GPT 5 models achieve and can handle a lot of the requests like for example for one million it's 626 queries per second and it's really quite fast and for that if you have that range of the vectors and you need to have quite rapid embedding quadrant is a good choice in general but if you have like billions of vectors then this is the question about another type of the system and Mewu's and they have this embedding database in a cloud it calls Zlyn it's already fully designed for quiet huge vector systems and it doesn't make sense to use this database for like much smaller systems if you have under 10 million vectors so do not recommend because that's that data and that's systems that going from the left to right it's then just harder like more complex to support setup and configure so that's why you're
+2025-11-30 08:15:38,965 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:15:43,224 | INFO     | Reasoning Tool : Received context from vector database 
+ - What is RAG?
+- Retrieval‑augmented generation (RAG) is a
+- pattern that augments an LLM by retrieving
+- relevant information from external sources at
+- query time and injecting it into the prompt. 12
+- RAG real world use cases
+- ● AI Chatbots: RAG provides accurate answers from internal
+- knowledge bases (e.g., support wikis, legal documents). OpenAI
+- emphasises that RAG is valuable when the content is not part of
+- the base model’s knowledge .
+- ● Search & discovery: Search systems combine keyword and
+- vector search to surface relevant documents in e‑commerce,
+- research and legal discovery.
+- ● AI Copilots: Tools like Supabase AI Copilots use vector
+- databases to ground responses in proprietary data and maintain
+- multi‑tenant isolation .
+- ● Long‑context reasoning: Databricks’ long‑context benchmark
+- shows that Google’s Gemini 2.5 models can maintain consistent
+- performance on RAG tasks up to two million tokens (longer than
+- most models), whereas OpenAI’s GPT 5 models achieve and can handle a lot of the requests like for example for one million it's 626 queries per second and it's really quite fast and for that if you have that range of the vectors and you need to have quite rapid embedding quadrant is a good choice in general but if you have like billions of vectors then this is the question about another type of the system and Mewu's and they have this embedding database in a cloud it calls Zlyn it's already fully designed for quiet huge vector systems and it doesn't make sense to use this database for like much smaller systems if you have under 10 million vectors so do not recommend because that's that data and that's systems that going from the left to right it's then just harder like more complex to support setup and configure so that's why you're
+2025-11-30 08:15:43,491 | INFO     | Reasoning Tool : Formatted Prompt:
+
+You are an expert RAG assistant. You MUST answer strictly using the content provided in <context>. 
+The context may contain noise, transcription errors, repetition, or partial sentences. Your job is to:
+
+1. Identify clean, meaningful facts that directly answer the question.
+2. Ignore noise such as repeated lines, slide numbers, broken sentences, filler words, or incomplete phrases.
+3. If parts of the answer appear fragmented across multiple places in the context, combine them logically WITHOUT adding new information.
+4. Even if the context is messy or incomplete, extract and synthesize whatever relevant information exists.
+5. ONLY reply with 'Not found in context' if the context contains absolutely NO information related to the question.
+
+Do NOT invent facts. Do NOT add external knowledge.
+
+<context>
+- What is RAG?
+- Retrieval‑augmented generation (RAG) is a
+- pattern that augments an LLM by retrieving
+- relevant information from external sources at
+- query time and injecting it into the prompt. 12
+- RAG real world use cases
+- ● AI Chatbots: RAG provides accurate answers from internal
+- knowledge bases (e.g., support wikis, legal documents). OpenAI
+- emphasises that RAG is valuable when the content is not part of
+- the base model’s knowledge .
+- ● Search & discovery: Search systems combine keyword and
+- vector search to surface relevant documents in e‑commerce,
+- research and legal discovery.
+- ● AI Copilots: Tools like Supabase AI Copilots use vector
+- databases to ground responses in proprietary data and maintain
+- multi‑tenant isolation .
+- ● Long‑context reasoning: Databricks’ long‑context benchmark
+- shows that Google’s Gemini 2.5 models can maintain consistent
+- performance on RAG tasks up to two million tokens (longer than
+- most models), whereas OpenAI’s GPT 5 models achieve and can handle a lot of the requests like for example for one million it's 626 queries per second and it's really quite fast and for that if you have that range of the vectors and you need to have quite rapid embedding quadrant is a good choice in general but if you have like billions of vectors then this is the question about another type of the system and Mewu's and they have this embedding database in a cloud it calls Zlyn it's already fully designed for quiet huge vector systems and it doesn't make sense to use this database for like much smaller systems if you have under 10 million vectors so do not recommend because that's that data and that's systems that going from the left to right it's then just harder like more complex to support setup and configure so that's why you're
+</context>
+
+Question: can RAG work without a vector database?
+
+Now provide the answer using ONLY the information found in the cleaned interpretation of the context.
+
+2025-11-30 08:15:45,655 | INFO     | Reasoning Tool : Generated Answer from LLM > 
+ Not found in context
+2025-11-30 08:15:45,664 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:15:46,481 | INFO     | Reflection Agent: Checking if answer found in output: Not found in context.
+2025-11-30 08:15:46,497 | INFO     | Evaluation Agent: Checking context for answer
+2025-11-30 08:15:46,501 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:15:50,732 | INFO     | Score Answer Tool: Initializing evaluation...
+2025-11-30 08:15:50,733 | INFO     | 	Scorer: Generating scoring prompt.
+2025-11-30 08:15:50,748 | INFO     | 	Scorer: Sending detailed prompt to LLM ...
+2025-11-30 08:15:52,821 | INFO     | 	Scorer: Raw LLM Output Received: 
+ACCURACY_SCORE: 1  
+RELEVANCE_SCORE: 1  
+CLARITY_SCORE: 1  
+OVERALL_SUMMARY: The 'Final Answer' is inadequate as it does not provide any information from the retrieved context to address the user query.
+2025-11-30 08:15:52,836 | INFO     | Score Answer Tool: Generated Report> 
+
+    --- Evaluation Report ---
+    Query: "can RAG work without a vector database?"
+    
+    ACCURACY_SCORE: 1  
+RELEVANCE_SCORE: 1  
+CLARITY_SCORE: 1  
+OVERALL_SUMMARY: The 'Final Answer' is inadequate as it does not provide any information from the retrieved context to address the user query.
+    
+    ---
+    
+2025-11-30 08:18:08,941 | INFO     | ========================================
+2025-11-30 08:18:08,942 | INFO     |         RAG CHATBOT SETUP MENU        
+2025-11-30 08:18:08,942 | INFO     | ========================================
+2025-11-30 08:18:08,942 | INFO     | Select your Vector Database option:
+2025-11-30 08:18:08,942 | INFO     |   [1] Pinecone   - Cloud Setup
+2025-11-30 08:18:08,943 | INFO     |   [2] Exit       - Quit the setup
+2025-11-30 08:18:08,943 | INFO     | ========================================
+2025-11-30 08:18:08,943 | INFO     | Enter your choice (1, 2): 
+2025-11-30 08:18:13,424 | INFO     | You selected **Pinecone** setup.
+2025-11-30 08:18:13,424 | INFO     | RAG Pipeline is executing for each step.
+2025-11-30 08:18:13,464 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:18:15,181 | INFO     | Insert Embeddings Tool calling...
+2025-11-30 08:18:15,182 | INFO     | Insert Embeddings Tool: Storing PDF and Audio embeddings in the vector store and returning the index.
+2025-11-30 08:18:15,989 | INFO     | 	Index 'rag-index' already exists. Deleting it just for assignment purpose.
+2025-11-30 08:18:22,429 | INFO     | 	Creating new index 'rag-index'...
+2025-11-30 08:18:23,285 | INFO     | Insert Embeddings Tool: 1 -  Data loading and processing started.
+2025-11-30 08:18:23,287 | INFO     | Insert Embeddings Tool: Loading and extracting text from PDF...
+2025-11-30 08:18:23,287 | INFO     | Insert Embeddings Tool: PDF loaded successfully.
+2025-11-30 08:18:24,574 | INFO     | Insert Embeddings Tool: Loading Whisper model...
+2025-11-30 08:18:24,574 | INFO     | Insert Embeddings Tool: Model loaded. Transcribing audio.
+2025-11-30 08:21:42,412 | INFO     | Insert Embeddings Tool: Transcription completed.
+2025-11-30 08:21:42,427 | INFO     | Insert Embeddings Tool: 2 -  Chunking documents.
+2025-11-30 08:21:42,428 | INFO     | Insert Embeddings Tool: Total numbers of PDF chunks: 19
+2025-11-30 08:21:42,435 | INFO     | Insert Embeddings Tool: Total numbers of Audio chunks: 32
+2025-11-30 08:21:42,435 | INFO     | Insert Embeddings Tool: 3 -  Embedding.
+2025-11-30 08:21:43,855 | INFO     | Insert Embeddings Tool: 4 -  Prepare vectors to store in Pinecone.
+2025-11-30 08:21:48,425 | INFO     | Insert Embeddings Tool: 4 -  Pinecone Index has been updated with new embeddings.
+2025-11-30 08:21:48,431 | INFO     | Insert Embeddings Tool: Pinecone index has been updated successfully.
+2025-11-30 08:21:48,438 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:53:14,408 | INFO     | Setting-up the Crew for Retrieval, Reasoning and Reflection Agents...
+2025-11-30 08:53:14,468 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:53:15,654 | INFO     | Retrieve Context Tool: Searching for relevant context for query: (who is Maksym Lypivskyi?)
+2025-11-30 08:53:15,678 | INFO     | Retrieve Context Tool: Generating embedding for query: who is Maksym Lypivskyi?
+2025-11-30 08:53:16,056 | WARNING  | Trace batch initialization returned status 401. Continuing without tracing.
+2025-11-30 08:53:18,041 | INFO     | Retrieve Context Tool: Query vector dimension 384
+2025-11-30 08:53:18,049 | INFO     | Retrieve Context Tool: Context : 
+ - Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+2025-11-30 08:53:18,083 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:53:20,607 | INFO     | Reasoning Tool : Received context from vector database 
+ - Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+2025-11-30 08:53:21,031 | INFO     | Reasoning Tool : Formatted Prompt:
+
+You are an expert RAG assistant. You MUST answer strictly using the content provided in <context>. 
+The context may contain noise, transcription errors, repetition, or partial sentences. Your job is to:
+
+1. Identify clean, meaningful facts that directly answer the question.
+2. Ignore noise such as repeated lines, slide numbers, broken sentences, filler words, or incomplete phrases.
+3. If parts of the answer appear fragmented across multiple places in the context, combine them logically WITHOUT adding new information.
+4. Even if the context is messy or incomplete, extract and synthesize whatever relevant information exists.
+5. ONLY reply with 'Not found in context' if the context contains absolutely NO information related to the question.
+
+Do NOT invent facts. Do NOT add external knowledge.
+
+<context>
+- Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+</context>
+
+Question: who is Maksym Lypivskyi?
+
+Now provide the answer using ONLY the information found in the cleaned interpretation of the context.
+
+2025-11-30 08:53:24,272 | INFO     | Reasoning Tool : Generated Answer from LLM > 
+ Maksym Lypivskyi is the Head of Cloud Platforms & AI Director. He has 9 years of experience at Ciklum driving large-scale cloud and software delivery initiatives and 3 years specializing in AI. His core interest is making AI systems reliable, production-ready, and business-impactful.
+2025-11-30 08:53:24,275 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:53:25,281 | INFO     | Reflection Agent: Checking if answer found in output: Maksym Lypivskyi is the Head of Cloud Platforms & AI Director. He has 9 years of experience at Ciklum driving large-scale cloud and software delivery initiatives and 3 years specializing in AI. His core interest is making AI systems reliable, production-ready, and business-impactful.
+2025-11-30 08:53:25,285 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:53:26,851 | INFO     | Refine Answer Tool: Initialed.
+2025-11-30 08:53:27,248 | INFO     | 	Refine Answer Tool : Formatted Prompt:
+
+            You are a critical reviewer AI. Improve the answer below by making it:
+            - clearer,
+            - more accurate,
+            - better structured,
+            - more complete (ONLY using the given context),
+            - different in wording (no verbatim repetition).
+
+            Original Answer:
+            Maksym Lypivskyi is the Head of Cloud Platforms & AI Director. With 9 years of experience at Ciklum driving large-scale cloud and software delivery initiatives, and 3 years specializing in AI, his core interest lies in making AI systems reliable, production-ready, and business-impactful.
+
+            Provide an improved version:
+            
+2025-11-30 08:53:29,234 | INFO     | Refine Answer Tool: Refined answer >  
+ Maksym Lypivskyi currently holds the position of Head of Cloud Platforms and Director of AI. Over the past nine years with Ciklum, he has led significant cloud and software delivery projects. During the last three years, he has concentrated on artificial intelligence, aiming to develop AI systems that are dependable, ready for production, and capable of making a meaningful business impact..
+2025-11-30 08:53:29,277 | INFO     | Evaluation Agent: Checking context for answer
+2025-11-30 08:53:29,284 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:53:33,004 | INFO     | Score Answer Tool: Initializing evaluation...
+2025-11-30 08:53:33,004 | INFO     | 	Scorer: Generating scoring prompt.
+2025-11-30 08:53:33,004 | INFO     | 	Scorer: Sending detailed prompt to LLM ...
+2025-11-30 08:53:34,148 | INFO     | 	Scorer: Raw LLM Output Received: 
+ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer is accurate, relevant, and clearly presented, fully addressing the user query based on the retrieved context.
+2025-11-30 08:53:34,165 | INFO     | Score Answer Tool: Generated Report> 
+
+    --- Evaluation Report ---
+    Query: "who is Maksym Lypivskyi?"
+    
+    ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer is accurate, relevant, and clearly presented, fully addressing the user query based on the retrieved context.
+    
+    ---
+    
+2025-11-30 08:56:43,087 | INFO     | Setting-up the Crew for Retrieval, Reasoning and Reflection Agents...
+2025-11-30 08:56:43,120 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:56:44,250 | INFO     | Retrieve Context Tool: Searching for relevant context for query: (best chunking strategy)
+2025-11-30 08:56:44,262 | INFO     | Retrieve Context Tool: Generating embedding for query: best chunking strategy
+2025-11-30 08:56:46,444 | INFO     | Retrieve Context Tool: Query vector dimension 384
+2025-11-30 08:56:46,470 | INFO     | Retrieve Context Tool: Context : 
+ - Three Main Chunking Strategies
+- Strategy How It Works Pros Cons When to Use
+- Fixed-Size Split at 512
+- tokens, 15%
+- overlap
+- Simple, fast,
+- predictable
+- May break
+- mid-sentence
+- General purpose,
+- starting point
+- Semantic Use ML to
+- identify coherent
+- units
+- Preserves
+- meaning, high
+- accuracy
+- More compute,
+- slower
+- Technical docs,
+- complex content
+- Recursive Split using
+- separators (\n\n,
+- \n, space)
+- repeatedly until
+- desired size
+- Respects
+- structure, better
+- boundaries
+- More complex
+- than ﬁxed-size
+- Documents with
+- headings,
+- paragraphs 10
+- Chunking Strategy Comparison
+- Fixed-Size
+- Recursive
+- Semantic 8
+- Chunking - The Critical Decision
+- Why Chunking Matters
+- LLMs have limited context windows (32k-200k
+- tokens). Large documents must be divided into
+- smaller pieces.
+- The Challenge:
+- ● Too large → loses specificity, poor retrieval
+- ● Too small → loses context, fragmented
+- information
+2025-11-30 08:56:46,539 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:56:49,403 | INFO     | Reasoning Tool : Received context from vector database 
+ - Three Main Chunking Strategies
+- Strategy How It Works Pros Cons When to Use
+- Fixed-Size Split at 512
+- tokens, 15%
+- overlap
+- Simple, fast,
+- predictable
+- May break
+- mid-sentence
+- General purpose,
+- starting point
+- Semantic Use ML to
+- identify coherent
+- units
+- Preserves
+- meaning, high
+- accuracy
+- More compute,
+- slower
+- Technical docs,
+- complex content
+- Recursive Split using
+- separators (\n\n,
+- \n, space)
+- repeatedly until
+- desired size
+- Respects
+- structure, better
+- boundaries
+- More complex
+- than ﬁxed-size
+- Documents with
+- headings,
+- paragraphs 10
+- Chunking Strategy Comparison
+- Fixed-Size
+- Recursive
+- Semantic 8
+- Chunking - The Critical Decision
+- Why Chunking Matters
+- LLMs have limited context windows (32k-200k
+- tokens). Large documents must be divided into
+- smaller pieces.
+- The Challenge:
+- ● Too large → loses specificity, poor retrieval
+- ● Too small → loses context, fragmented
+- information
+2025-11-30 08:56:50,017 | INFO     | Reasoning Tool : Formatted Prompt:
+
+You are an expert RAG assistant. You MUST answer strictly using the content provided in <context>. 
+The context may contain noise, transcription errors, repetition, or partial sentences. Your job is to:
+
+1. Identify clean, meaningful facts that directly answer the question.
+2. Ignore noise such as repeated lines, slide numbers, broken sentences, filler words, or incomplete phrases.
+3. If parts of the answer appear fragmented across multiple places in the context, combine them logically WITHOUT adding new information.
+4. Even if the context is messy or incomplete, extract and synthesize whatever relevant information exists.
+5. ONLY reply with 'Not found in context' if the context contains absolutely NO information related to the question.
+
+Do NOT invent facts. Do NOT add external knowledge.
+
+<context>
+- Three Main Chunking Strategies
+- Strategy How It Works Pros Cons When to Use
+- Fixed-Size Split at 512
+- tokens, 15%
+- overlap
+- Simple, fast,
+- predictable
+- May break
+- mid-sentence
+- General purpose,
+- starting point
+- Semantic Use ML to
+- identify coherent
+- units
+- Preserves
+- meaning, high
+- accuracy
+- More compute,
+- slower
+- Technical docs,
+- complex content
+- Recursive Split using
+- separators (\n\n,
+- \n, space)
+- repeatedly until
+- desired size
+- Respects
+- structure, better
+- boundaries
+- More complex
+- than ﬁxed-size
+- Documents with
+- headings,
+- paragraphs 10
+- Chunking Strategy Comparison
+- Fixed-Size
+- Recursive
+- Semantic 8
+- Chunking - The Critical Decision
+- Why Chunking Matters
+- LLMs have limited context windows (32k-200k
+- tokens). Large documents must be divided into
+- smaller pieces.
+- The Challenge:
+- ● Too large → loses specificity, poor retrieval
+- ● Too small → loses context, fragmented
+- information
+</context>
+
+Question: what is the best chunking stretegy?
+
+Now provide the answer using ONLY the information found in the cleaned interpretation of the context.
+
+2025-11-30 08:56:50,894 | INFO     | Reasoning Tool : Generated Answer from LLM > 
+ Not found in context
+2025-11-30 08:56:50,898 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:56:52,509 | INFO     | Reasoning Tool : Received context from vector database 
+ The context describes three chunking strategies: Fixed-Size, Semantic, and Recursive. It also mentions the pros and cons of each, as well as when to use them. However, it does not explicitly state which is the "best" chunking strategy. The "best" strategy depends on the specific use case.
+2025-11-30 08:56:52,908 | INFO     | Reasoning Tool : Formatted Prompt:
+
+You are an expert RAG assistant. You MUST answer strictly using the content provided in <context>. 
+The context may contain noise, transcription errors, repetition, or partial sentences. Your job is to:
+
+1. Identify clean, meaningful facts that directly answer the question.
+2. Ignore noise such as repeated lines, slide numbers, broken sentences, filler words, or incomplete phrases.
+3. If parts of the answer appear fragmented across multiple places in the context, combine them logically WITHOUT adding new information.
+4. Even if the context is messy or incomplete, extract and synthesize whatever relevant information exists.
+5. ONLY reply with 'Not found in context' if the context contains absolutely NO information related to the question.
+
+Do NOT invent facts. Do NOT add external knowledge.
+
+<context>
+The context describes three chunking strategies: Fixed-Size, Semantic, and Recursive. It also mentions the pros and cons of each, as well as when to use them. However, it does not explicitly state which is the "best" chunking strategy. The "best" strategy depends on the specific use case.
+</context>
+
+Question: what is the best chunking stretegy?
+
+Now provide the answer using ONLY the information found in the cleaned interpretation of the context.
+
+2025-11-30 08:56:54,425 | INFO     | Reasoning Tool : Generated Answer from LLM > 
+ Not found in context
+2025-11-30 08:56:54,431 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:56:55,319 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:56:58,252 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:56:59,435 | INFO     | Reflection Agent: Checking if answer found in output: Not found in context
+2025-11-30 08:56:59,453 | INFO     | Evaluation Agent: Checking context for answer
+2025-11-30 08:56:59,458 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 08:57:03,390 | INFO     | Score Answer Tool: Initializing evaluation...
+2025-11-30 08:57:03,391 | INFO     | 	Scorer: Generating scoring prompt.
+2025-11-30 08:57:03,407 | INFO     | 	Scorer: Sending detailed prompt to LLM ...
+2025-11-30 08:57:05,180 | INFO     | 	Scorer: Raw LLM Output Received: 
+ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer accurately, relevantly, and clearly explains the three main chunking strategies, aligning perfectly with the retrieved context.
+2025-11-30 08:57:05,191 | INFO     | Score Answer Tool: Generated Report> 
+
+    --- Evaluation Report ---
+    Query: "what is the best chunking stretegy?"
+    
+    ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer accurately, relevantly, and clearly explains the three main chunking strategies, aligning perfectly with the retrieved context.
+    
+    ---
+    
+2025-11-30 09:01:25,410 | INFO     | ========================================
+2025-11-30 09:01:25,410 | INFO     |         RAG CHATBOT SETUP MENU        
+2025-11-30 09:01:25,410 | INFO     | ========================================
+2025-11-30 09:01:25,410 | INFO     | Select your Vector Database option:
+2025-11-30 09:01:25,410 | INFO     |   [1] Pinecone   - Cloud Setup
+2025-11-30 09:01:25,410 | INFO     |   [2] Exit       - Quit the setup
+2025-11-30 09:01:25,410 | INFO     | ========================================
+2025-11-30 09:01:25,410 | INFO     | Enter your choice (1, 2): 
+2025-11-30 09:03:48,359 | INFO     | You selected **Pinecone** setup.
+2025-11-30 09:03:48,360 | INFO     | RAG Pipeline is executing for each step.
+2025-11-30 09:03:48,405 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:03:49,334 | INFO     | Insert Embeddings Tool calling...
+2025-11-30 09:03:49,335 | INFO     | Insert Embeddings Tool: Storing PDF and Audio embeddings in the vector store and returning the index.
+2025-11-30 09:03:50,300 | INFO     | 	Index 'rag-index' already exists. Deleting it just for assignment purpose.
+2025-11-30 09:03:57,509 | INFO     | 	Creating new index 'rag-index'...
+2025-11-30 09:04:03,890 | INFO     | Insert Embeddings Tool: 1 -  Data loading and processing started.
+2025-11-30 09:04:03,892 | INFO     | Insert Embeddings Tool: Loading and extracting text from PDF...
+2025-11-30 09:04:03,892 | INFO     | Insert Embeddings Tool: PDF loaded successfully.
+2025-11-30 09:04:05,285 | INFO     | Insert Embeddings Tool: Loading Whisper model...
+2025-11-30 09:04:05,287 | INFO     | Insert Embeddings Tool: Model loaded. Transcribing audio.
+2025-11-30 09:07:26,852 | INFO     | Insert Embeddings Tool: Transcription completed.
+2025-11-30 09:07:26,865 | INFO     | Insert Embeddings Tool: 2 -  Chunking documents.
+2025-11-30 09:07:26,866 | INFO     | Insert Embeddings Tool: Total numbers of PDF chunks: 19
+2025-11-30 09:07:26,872 | INFO     | Insert Embeddings Tool: Total numbers of Audio chunks: 32
+2025-11-30 09:07:26,872 | INFO     | Insert Embeddings Tool: 3 -  Embedding.
+2025-11-30 09:07:28,727 | INFO     | Insert Embeddings Tool: 4 -  Prepare vectors to store in Pinecone.
+2025-11-30 09:07:32,139 | INFO     | Insert Embeddings Tool: 4 -  Pinecone Index has been updated with new embeddings.
+2025-11-30 09:07:32,144 | INFO     | Insert Embeddings Tool: Pinecone index has been updated successfully.
+2025-11-30 09:07:32,153 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:25:00,728 | INFO     | Setting-up the Crew for Retrieval, Reasoning and Reflection Agents...
+2025-11-30 09:25:00,781 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:25:02,292 | INFO     | Retrieve Context Tool: Searching for relevant context for query: (who is Maksym Lypivskyi?)
+2025-11-30 09:25:02,334 | WARNING  | Trace batch initialization returned status 401. Continuing without tracing.
+2025-11-30 09:25:02,334 | INFO     | Retrieve Context Tool: Generating embedding for query: who is Maksym Lypivskyi?
+2025-11-30 09:25:03,838 | INFO     | Retrieve Context Tool: Query vector dimension 384
+2025-11-30 09:25:03,845 | INFO     | Retrieve Context Tool: Context : 
+ - Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+2025-11-30 09:25:03,876 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:25:06,234 | INFO     | Reasoning Tool : Received context from vector database 
+ Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+2025-11-30 09:25:06,573 | INFO     | Reasoning Tool : Formatted Prompt:
+
+You are an expert RAG assistant. You MUST answer strictly using the content provided in <context>. 
+The context may contain noise, transcription errors, repetition, or partial sentences. Your job is to:
+
+1. Identify clean, meaningful facts that directly answer the question.
+2. Ignore noise such as repeated lines, slide numbers, broken sentences, filler words, or incomplete phrases.
+3. If parts of the answer appear fragmented across multiple places in the context, combine them logically WITHOUT adding new information.
+4. Even if the context is messy or incomplete, extract and synthesize whatever relevant information exists.
+5. ONLY reply with 'Not found in context' if the context contains absolutely NO information related to the question.
+
+Do NOT invent facts. Do NOT add external knowledge.
+
+<context>
+Speaker
+- Maksym Lypivskyi
+- Head of Cloud Platforms &
+- AI Director
+- ● 9 years at Ciklum driving large-scale cloud and
+- software delivery initiatives
+- ● 3 years specializing in AI
+- ● Core interest: making AI systems reliable,
+- production-ready, and business-impactful 1
+- Place for photoRAG
+- Intro
+- October 2025 in the agentech rock system so when the user make the requests what the latest on AI regulation so llem rotor detect like latest then we will utilize the tool to road to web search so that's why I said that like in general if we are saying that we add just additional tool like web search yes it's to some extent rock system and like when we talk about the query the composition so we have a compare our Q3 to industry and predict Q4 and first of all we have the the composition of that request that's agents our llem bricks like our q3 matrix then we need to find this information in our internal database or a vector system industry q3 benchmarks potentially we don't have this information it's publicly available then web search and q4 factors again goes to the internal DB but again it's can go
+</context>
+
+Question: who is Maksym Lypivskyi?
+
+Now provide the answer using ONLY the information found in the cleaned interpretation of the context.
+
+2025-11-30 09:25:08,141 | INFO     | Reasoning Tool : Generated Answer from LLM > 
+ Maksym Lypivskyi is the Head of Cloud Platforms and AI Director. He has 9 years of experience at Ciklum driving large-scale cloud and software delivery initiatives and has spent 3 years specializing in AI. His core interest is making AI systems reliable, production-ready, and business-impactful.
+2025-11-30 09:25:08,144 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:25:09,559 | INFO     | Reflection Agent: Checking if answer found in output: Maksym Lypivskyi is the Head of Cloud Platforms and AI Director. He has 9 years of experience at Ciklum driving large-scale cloud and software delivery initiatives and has spent 3 years specializing in AI. His core interest is making AI systems reliable, production-ready, and business-impactful.
+2025-11-30 09:25:09,564 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:25:10,874 | INFO     | Refine Answer Tool: Initialed.
+2025-11-30 09:25:11,194 | INFO     | 	Refine Answer Tool : Formatted Prompt:
+
+            You are a critical reviewer AI. Improve the answer below by making it:
+            - clearer,
+            - more accurate,
+            - better structured,
+            - more complete (ONLY using the given context),
+            - different in wording (no verbatim repetition).
+
+            Original Answer:
+            Maksym Lypivskyi is Ciklum's Head of Cloud Platforms and AI Director. With 9 years of experience in cloud and software delivery and 3 years specializing in AI, his focus is on creating reliable, production-ready, and impactful AI systems.
+
+            Provide an improved version:
+            
+2025-11-30 09:25:12,590 | INFO     | Refine Answer Tool: Refined answer >  
+ Maksym Lypivskyi serves as the Head of Cloud Platforms and the Director of AI at Ciklum. His extensive background includes nine years in the fields of cloud computing and software delivery. Over the past three years, he has concentrated his expertise on artificial intelligence. Lypivskyi is dedicated to developing AI systems that are not only dependable and ready for deployment but also deliver substantial impact..
+2025-11-30 09:25:12,620 | INFO     | Evaluation Agent: Checking context for answer
+2025-11-30 09:25:12,623 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:25:15,866 | INFO     | Score Answer Tool: Initializing evaluation...
+2025-11-30 09:25:15,866 | INFO     | 	Scorer: Generating scoring prompt.
+2025-11-30 09:25:15,874 | INFO     | 	Scorer: Sending detailed prompt to LLM ...
+2025-11-30 09:25:17,715 | INFO     | 	Scorer: Raw LLM Output Received: 
+ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer is accurate, relevant, and clearly presents the information about Maksym Lypivskyi as provided in the retrieved context.
+2025-11-30 09:25:17,728 | INFO     | Score Answer Tool: Generated Report> 
+
+    --- Evaluation Report ---
+    Query: "who is Maksym Lypivskyi?"
+    
+    ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer is accurate, relevant, and clearly presents the information about Maksym Lypivskyi as provided in the retrieved context.
+    
+    ---
+    
+2025-11-30 09:28:41,783 | INFO     | Setting-up the Crew for Retrieval, Reasoning and Reflection Agents...
+2025-11-30 09:28:42,174 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:28:43,528 | INFO     | Retrieve Context Tool: Searching for relevant context for query: (default recommended chunk size and overlap in tokens)
+2025-11-30 09:28:43,535 | INFO     | Retrieve Context Tool: Generating embedding for query: default recommended chunk size and overlap in tokens
+2025-11-30 09:28:44,880 | INFO     | Retrieve Context Tool: Query vector dimension 384
+2025-11-30 09:28:44,887 | INFO     | Retrieve Context Tool: Context : 
+ - ✅
+- Chunk size: 512 tokens
+- Chunk overlap: 15% (~75 tokens)
+- Top-k retrieval: 3-5 chunks
+- Embedding dimensions: 768-1536
+- Default Conﬁguration
+- (Works for 80% of cases): 8
+- Chunking - The Critical Decision
+- Why Chunking Matters
+- LLMs have limited context windows (32k-200k
+- tokens). Large documents must be divided into
+- smaller pieces.
+- The Challenge:
+- ● Too large → loses specificity, poor retrieval
+- ● Too small → loses context, fragmented
+- information 9
+- Three Main Chunking Strategies
+- Strategy How It Works Pros Cons When to Use
+- Fixed-Size Split at 512
+- tokens, 15%
+- overlap
+- Simple, fast,
+- predictable
+- May break
+- mid-sentence
+- General purpose,
+- starting point
+- Semantic Use ML to
+- identify coherent
+- units
+- Preserves
+- meaning, high
+- accuracy
+- More compute,
+- slower
+- Technical docs,
+- complex content
+- Recursive Split using
+- separators (\n\n,
+- \n, space)
+- repeatedly until
+- desired size
+- Respects
+- structure, better
+- boundaries
+- More complex
+- than ﬁxed-size
+- Documents with
+- headings,
+- paragraphs
+2025-11-30 09:28:44,915 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:28:48,242 | INFO     | Reasoning Tool : Received context from vector database 
+ - ✅
+- Chunk size: 512 tokens
+- Chunk overlap: 15% (~75 tokens)
+- Top-k retrieval: 3-5 chunks
+- Embedding dimensions: 768-1536
+- Default Conﬁguration
+- (Works for 80% of cases): 8
+- Chunking - The Critical Decision
+- Why Chunking Matters
+- LLMs have limited context windows (32k-200k
+- tokens). Large documents must be divided into
+- smaller pieces.
+- The Challenge:
+- ● Too large → loses specificity, poor retrieval
+- ● Too small → loses context, fragmented
+- information 9
+- Three Main Chunking Strategies
+- Strategy How It Works Pros Cons When to Use
+- Fixed-Size Split at 512
+- tokens, 15%
+- overlap
+- Simple, fast,
+- predictable
+- May break
+- mid-sentence
+- General purpose,
+- starting point
+- Semantic Use ML to
+- identify coherent
+- units
+- Preserves
+- meaning, high
+- accuracy
+- More compute,
+- slower
+- Technical docs,
+- complex content
+- Recursive Split using
+- separators (\n\n,
+- \n, space)
+- repeatedly until
+- desired size
+- Respects
+- structure, better
+- boundaries
+- More complex
+- than ﬁxed-size
+- Documents with
+- headings,
+- paragraphs
+2025-11-30 09:28:48,541 | INFO     | Reasoning Tool : Formatted Prompt:
+
+You are an expert RAG assistant. You MUST answer strictly using the content provided in <context>. 
+The context may contain noise, transcription errors, repetition, or partial sentences. Your job is to:
+
+1. Identify clean, meaningful facts that directly answer the question.
+2. Ignore noise such as repeated lines, slide numbers, broken sentences, filler words, or incomplete phrases.
+3. If parts of the answer appear fragmented across multiple places in the context, combine them logically WITHOUT adding new information.
+4. Even if the context is messy or incomplete, extract and synthesize whatever relevant information exists.
+5. ONLY reply with 'Not found in context' if the context contains absolutely NO information related to the question.
+
+Do NOT invent facts. Do NOT add external knowledge.
+
+<context>
+- ✅
+- Chunk size: 512 tokens
+- Chunk overlap: 15% (~75 tokens)
+- Top-k retrieval: 3-5 chunks
+- Embedding dimensions: 768-1536
+- Default Conﬁguration
+- (Works for 80% of cases): 8
+- Chunking - The Critical Decision
+- Why Chunking Matters
+- LLMs have limited context windows (32k-200k
+- tokens). Large documents must be divided into
+- smaller pieces.
+- The Challenge:
+- ● Too large → loses specificity, poor retrieval
+- ● Too small → loses context, fragmented
+- information 9
+- Three Main Chunking Strategies
+- Strategy How It Works Pros Cons When to Use
+- Fixed-Size Split at 512
+- tokens, 15%
+- overlap
+- Simple, fast,
+- predictable
+- May break
+- mid-sentence
+- General purpose,
+- starting point
+- Semantic Use ML to
+- identify coherent
+- units
+- Preserves
+- meaning, high
+- accuracy
+- More compute,
+- slower
+- Technical docs,
+- complex content
+- Recursive Split using
+- separators (\n\n,
+- \n, space)
+- repeatedly until
+- desired size
+- Respects
+- structure, better
+- boundaries
+- More complex
+- than ﬁxed-size
+- Documents with
+- headings,
+- paragraphs
+</context>
+
+Question: what is the default recommended chunk size and overlap (in tokens)?
+
+Now provide the answer using ONLY the information found in the cleaned interpretation of the context.
+
+2025-11-30 09:28:50,370 | INFO     | Reasoning Tool : Generated Answer from LLM > 
+ The default recommended chunk size is 512 tokens with a 15% overlap.
+2025-11-30 09:28:50,373 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:28:51,345 | INFO     | Reflection Agent: Checking if answer found in output: The default recommended chunk size is 512 tokens with a 15% overlap. This overlap equates to approximately 75 tokens.
+2025-11-30 09:28:51,348 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:28:52,508 | INFO     | Refine Answer Tool: Initialed.
+2025-11-30 09:28:52,830 | INFO     | 	Refine Answer Tool : Formatted Prompt:
+
+            You are a critical reviewer AI. Improve the answer below by making it:
+            - clearer,
+            - more accurate,
+            - better structured,
+            - more complete (ONLY using the given context),
+            - different in wording (no verbatim repetition).
+
+            Original Answer:
+            The default recommended chunk size is 512 tokens with a 15% overlap. This overlap equates to approximately 75 tokens.
+
+            Provide an improved version:
+            
+2025-11-30 09:28:53,842 | INFO     | Refine Answer Tool: Refined answer >  
+ The standard recommended chunk size is 512 tokens, with an overlap of 15%, which translates to a roundabout of 75 tokens..
+2025-11-30 09:28:53,863 | INFO     | Evaluation Agent: Checking context for answer
+2025-11-30 09:28:53,866 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:28:57,304 | INFO     | Score Answer Tool: Initializing evaluation...
+2025-11-30 09:28:57,309 | INFO     | 	Scorer: Generating scoring prompt.
+2025-11-30 09:28:57,316 | INFO     | 	Scorer: Sending detailed prompt to LLM ...
+2025-11-30 09:28:58,932 | INFO     | 	Scorer: Raw LLM Output Received: 
+ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer is accurate, relevant, and clearly presented, fully addressing the user query based on the retrieved context.
+2025-11-30 09:28:58,947 | INFO     | Score Answer Tool: Generated Report> 
+
+    --- Evaluation Report ---
+    Query: "what is the default recommended chunk size and overlap (in tokens)?"
+    
+    ACCURACY_SCORE: 5  
+RELEVANCE_SCORE: 5  
+CLARITY_SCORE: 5  
+OVERALL_SUMMARY: The final answer is accurate, relevant, and clearly presented, fully addressing the user query based on the retrieved context.
+    
+    ---
+    
+2025-11-30 09:31:41,496 | INFO     | Setting-up the Crew for Retrieval, Reasoning and Reflection Agents...
+2025-11-30 09:31:41,521 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:31:43,173 | INFO     | Retrieve Context Tool: Searching for relevant context for query: (Can RAG work without a vector database?)
+2025-11-30 09:31:43,184 | INFO     | Retrieve Context Tool: Generating embedding for query: Can RAG work without a vector database?
+2025-11-30 09:31:45,632 | INFO     | Retrieve Context Tool: Query vector dimension 384
+2025-11-30 09:31:45,647 | INFO     | Retrieve Context Tool: Context : 
+ - What is RAG?
+- Retrieval‑augmented generation (RAG) is a
+- pattern that augments an LLM by retrieving
+- relevant information from external sources at
+- query time and injecting it into the prompt. 12
+- RAG real world use cases
+- ● AI Chatbots: RAG provides accurate answers from internal
+- knowledge bases (e.g., support wikis, legal documents). OpenAI
+- emphasises that RAG is valuable when the content is not part of
+- the base model’s knowledge .
+- ● Search & discovery: Search systems combine keyword and
+- vector search to surface relevant documents in e‑commerce,
+- research and legal discovery.
+- ● AI Copilots: Tools like Supabase AI Copilots use vector
+- databases to ground responses in proprietary data and maintain
+- multi‑tenant isolation .
+- ● Long‑context reasoning: Databricks’ long‑context benchmark
+- shows that Google’s Gemini 2.5 models can maintain consistent
+- performance on RAG tasks up to two million tokens (longer than
+- most models), whereas OpenAI’s GPT 5 models achieve and can handle a lot of the requests like for example for one million it's 626 queries per second and it's really quite fast and for that if you have that range of the vectors and you need to have quite rapid embedding quadrant is a good choice in general but if you have like billions of vectors then this is the question about another type of the system and Mewu's and they have this embedding database in a cloud it calls Zlyn it's already fully designed for quiet huge vector systems and it doesn't make sense to use this database for like much smaller systems if you have under 10 million vectors so do not recommend because that's that data and that's systems that going from the left to right it's then just harder like more complex to support setup and configure so that's why you're
+2025-11-30 09:31:45,683 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:31:49,052 | INFO     | Reasoning Tool : Received context from vector database 
+ - What is RAG?
+- Retrieval‑augmented generation (RAG) is a
+- pattern that augments an LLM by retrieving
+- relevant information from external sources at
+- query time and injecting it into the prompt. 12
+- RAG real world use cases
+- ● AI Chatbots: RAG provides accurate answers from internal
+- knowledge bases (e.g., support wikis, legal documents). OpenAI
+- emphasises that RAG is valuable when the content is not part of
+- the base model’s knowledge .
+- ● Search & discovery: Search systems combine keyword and
+- vector search to surface relevant documents in e‑commerce,
+- research and legal discovery.
+- ● AI Copilots: Tools like Supabase AI Copilots use vector
+- databases to ground responses in proprietary data and maintain
+- multi‑tenant isolation .
+- ● Long‑context reasoning: Databricks’ long‑context benchmark
+- shows that Google’s Gemini 2.5 models can maintain consistent
+- performance on RAG tasks up to two million tokens (longer than
+- most models), whereas OpenAI’s GPT 5 models achieve and can handle a lot of the requests like for example for one million it's 626 queries per second and it's really quite fast and for that if you have that range of the vectors and you need to have quite rapid embedding quadrant is a good choice in general but if you have like billions of vectors then this is the question about another type of the system and Mewu's and they have this embedding database in a cloud it calls Zlyn it's already fully designed for quiet huge vector systems and it doesn't make sense to use this database for like much smaller systems if you have under 10 million vectors so do not recommend because that's that data and that's systems that going from the left to right it's then just harder like more complex to support setup and configure so that's why you're
+2025-11-30 09:31:49,405 | INFO     | Reasoning Tool : Formatted Prompt:
+
+You are an expert RAG assistant. You MUST answer strictly using the content provided in <context>. 
+The context may contain noise, transcription errors, repetition, or partial sentences. Your job is to:
+
+1. Identify clean, meaningful facts that directly answer the question.
+2. Ignore noise such as repeated lines, slide numbers, broken sentences, filler words, or incomplete phrases.
+3. If parts of the answer appear fragmented across multiple places in the context, combine them logically WITHOUT adding new information.
+4. Even if the context is messy or incomplete, extract and synthesize whatever relevant information exists.
+5. ONLY reply with 'Not found in context' if the context contains absolutely NO information related to the question.
+
+Do NOT invent facts. Do NOT add external knowledge.
+
+<context>
+- What is RAG?
+- Retrieval‑augmented generation (RAG) is a
+- pattern that augments an LLM by retrieving
+- relevant information from external sources at
+- query time and injecting it into the prompt. 12
+- RAG real world use cases
+- ● AI Chatbots: RAG provides accurate answers from internal
+- knowledge bases (e.g., support wikis, legal documents). OpenAI
+- emphasises that RAG is valuable when the content is not part of
+- the base model’s knowledge .
+- ● Search & discovery: Search systems combine keyword and
+- vector search to surface relevant documents in e‑commerce,
+- research and legal discovery.
+- ● AI Copilots: Tools like Supabase AI Copilots use vector
+- databases to ground responses in proprietary data and maintain
+- multi‑tenant isolation .
+- ● Long‑context reasoning: Databricks’ long‑context benchmark
+- shows that Google’s Gemini 2.5 models can maintain consistent
+- performance on RAG tasks up to two million tokens (longer than
+- most models), whereas OpenAI’s GPT 5 models achieve and can handle a lot of the requests like for example for one million it's 626 queries per second and it's really quite fast and for that if you have that range of the vectors and you need to have quite rapid embedding quadrant is a good choice in general but if you have like billions of vectors then this is the question about another type of the system and Mewu's and they have this embedding database in a cloud it calls Zlyn it's already fully designed for quiet huge vector systems and it doesn't make sense to use this database for like much smaller systems if you have under 10 million vectors so do not recommend because that's that data and that's systems that going from the left to right it's then just harder like more complex to support setup and configure so that's why you're
+</context>
+
+Question: Can RAG work without a vector database?
+
+Now provide the answer using ONLY the information found in the cleaned interpretation of the context.
+
+2025-11-30 09:31:50,487 | INFO     | Reasoning Tool : Generated Answer from LLM > 
+ Not found in context
+2025-11-30 09:31:50,491 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:31:51,275 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:31:54,595 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:31:55,478 | INFO     | Reflection Agent: Checking if answer found in output: Not found in context.
+2025-11-30 09:31:55,496 | INFO     | Evaluation Agent: Checking context for answer
+2025-11-30 09:31:55,502 | INFO     | AFC is enabled with max remote calls: 10.
+2025-11-30 09:31:59,233 | INFO     | Score Answer Tool: Initializing evaluation...
+2025-11-30 09:31:59,234 | INFO     | 	Scorer: Generating scoring prompt.
+2025-11-30 09:31:59,240 | INFO     | 	Scorer: Sending detailed prompt to LLM ...
+2025-11-30 09:32:00,576 | INFO     | 	Scorer: Raw LLM Output Received: 
+ACCURACY_SCORE: 1  
+RELEVANCE_SCORE: 1  
+CLARITY_SCORE: 1  
+OVERALL_SUMMARY: The final answer fails to provide any information or address the user query, as it simply states "Not found in context" without utilizing the retrieved context.
+2025-11-30 09:32:00,582 | INFO     | Score Answer Tool: Generated Report> 
+
+    --- Evaluation Report ---
+    Query: "Can RAG work without a vector database?"
+    
+    ACCURACY_SCORE: 1  
+RELEVANCE_SCORE: 1  
+CLARITY_SCORE: 1  
+OVERALL_SUMMARY: The final answer fails to provide any information or address the user query, as it simply states "Not found in context" without utilizing the retrieved context.
+    
+    ---
+    
+2025-11-30 10:09:04,449 | INFO     | Script interrupted. Exiting!

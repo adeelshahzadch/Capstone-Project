@@ -1,0 +1,20 @@
+- What is RAG?
+- Retrieval‑augmented generation (RAG) is a
+- pattern that augments an LLM by retrieving
+- relevant information from external sources at
+- query time and injecting it into the prompt. 12
+- RAG real world use cases
+- ● AI Chatbots: RAG provides accurate answers from internal
+- knowledge bases (e.g., support wikis, legal documents). OpenAI
+- emphasises that RAG is valuable when the content is not part of
+- the base model’s knowledge .
+- ● Search & discovery: Search systems combine keyword and
+- vector search to surface relevant documents in e‑commerce,
+- research and legal discovery.
+- ● AI Copilots: Tools like Supabase AI Copilots use vector
+- databases to ground responses in proprietary data and maintain
+- multi‑tenant isolation .
+- ● Long‑context reasoning: Databricks’ long‑context benchmark
+- shows that Google’s Gemini 2.5 models can maintain consistent
+- performance on RAG tasks up to two million tokens (longer than
+- most models), whereas OpenAI’s GPT 5 models achieve and can handle a lot of the requests like for example for one million it's 626 queries per second and it's really quite fast and for that if you have that range of the vectors and you need to have quite rapid embedding quadrant is a good choice in general but if you have like billions of vectors then this is the question about another type of the system and Mewu's and they have this embedding database in a cloud it calls Zlyn it's already fully designed for quiet huge vector systems and it doesn't make sense to use this database for like much smaller systems if you have under 10 million vectors so do not recommend because that's that data and that's systems that going from the left to right it's then just harder like more complex to support setup and configure so that's why you're

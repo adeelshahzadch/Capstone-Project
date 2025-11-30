@@ -1,0 +1,1 @@
+The standard recommended chunk size is 512 tokens, with an overlap of 15%, which translates to a roundabout of 75 tokens.
