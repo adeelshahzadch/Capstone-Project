@@ -1,30 +1,3 @@
-# from crewai import Agent, Task
-# from agents.tools.reasoning_tools import GenerateAnswerTool
-
-# # Instantiate the tool for generating answers
-# generate_answer_tool = GenerateAnswerTool()
-
-# # Define the task for the Reasoning Agent
-# generate_answer_task = Task(
-#     description="Generate the final answer from the retrieved context using an LLM.",
-#     expected_output="Generated answer based on the context retrieved from previous tasks.",
-#     tools=[generate_answer_tool] 
-# )
-
-# # Define the Reasoning Agent
-# reasoning_agent = Agent(
-#     role="Reasoning", 
-#     goal="Generate an answer based on retrieved context from previous task/agent", 
-#     backstory="Expert in generating answers from context using LLMs",
-#     tasks=[generate_answer_task],
-#     llm=None,  # explicitly no LLM
-#     max_rpm=30
-# )
-
- 
-# generate_answer_task.agent = reasoning_agent
-
-  
 from crewai import Agent, LLM
 from agents.tasks.reasoning  import generate_answer_task
  
