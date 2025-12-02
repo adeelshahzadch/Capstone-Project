@@ -67,16 +67,32 @@ The project is highly modular, separating concerns into dedicated directories:
     ```
 3.  **Configure `.env` file:**
     Ensure required keys and paths are set:
-    ```ini
-    # Example .env content
-    APINECONE_API_KEY="..."
-    INDEX_NAME="..."
-    EMBEDDING_MODEL_NAME="all-MiniLM-L6-v2"
-    OPENAI_KEY="..."
-    OPENAI_MODEL="gpt-4-turbo"
-    PDF="./path/to/Rag.pdf"
-    AUDIO="./path/to/Rag.mp3"
-    ```
+```ini
+OPENAI_API_KEY=Add-your-key-here
+OPENAI_KEY=Add-your-key-here
+OPENAI_API_MODEL=Add-your-model-here
+
+HUGGINGFACEHUB_API_TOKEN=Add-your-token-here
+EMBEDDINGS_HUGGINGFACE_URL=Add-your-url-here
+
+MODEL_NAME=Add-your-model-here
+MODEL=Add-your-model-here
+
+PDF=Src/files/rag.pdf
+AUDIO=Src/files/rag.mp3
+
+# --- RAG Setup Constants ---
+COLLECTION_NAME=rag_data_collection
+EMBEDDING_MODEL_NAME=all-MiniLM-L6-v2
+
+# --- PINECONE Setup Constants ---
+INDEX_NAME=rag-index
+PINECONE_API_KEY=Add-your-key-here
+CREWAI_TRACING_ENABLED=true
+GEMINI_API_KEY=Add-your-key-here
+```
+
+Ensure you replace placeholder values (e.g., `Add-your-key-here`) with actual API keys and paths before running the project.
 
 ### Running the Pipeline
 
@@ -125,33 +141,6 @@ This file defines the strict LLM prompts that govern the quality of the output:
 * **`refine_answer`:** Used by the **Reflection Agent** to improve clarity, structure, and conciseness without adding new facts.
 * **`score_answer`:** Used by the **Evaluation Agent** as the final check, implementing the LLM-as-a-judge pattern to score the answer against the criteria: **Accuracy**, **Relevance**, and **Clarity**.
 
-## Environment Variables
+ 
 
-The project relies on a `.env` file to configure API keys, model names, and file paths. Below is an example of the `.env` file:
 
-```ini
-OPENAI_API_KEY=Add-your-key-here
-OPENAI_KEY=Add-your-key-here
-OPENAI_API_MODEL=Add-your-model-here
-
-HUGGINGFACEHUB_API_TOKEN=Add-your-token-here
-EMBEDDINGS_HUGGINGFACE_URL=Add-your-url-here
-
-MODEL_NAME=Add-your-model-here
-MODEL=Add-your-model-here
-
-PDF=Src/files/rag.pdf
-AUDIO=Src/files/rag.mp3
-
-# --- RAG Setup Constants ---
-COLLECTION_NAME=rag_data_collection
-EMBEDDING_MODEL_NAME=all-MiniLM-L6-v2
-
-# --- PINECONE Setup Constants ---
-INDEX_NAME=rag-index
-PINECONE_API_KEY=Add-your-key-here
-CREWAI_TRACING_ENABLED=true
-GEMINI_API_KEY=Add-your-key-here
-```
-
-Ensure you replace placeholder values (e.g., `Add-your-key-here`) with actual API keys and paths before running the project.
