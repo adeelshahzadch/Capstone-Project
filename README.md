@@ -20,7 +20,7 @@ Below is the architecture diagram illustrating the sequential data flow and agen
 
 ![RAG Pipeline Architecture](1.png)
 
-#,Agent Component,Agent Role,Primary Goal,Key Tasks (in the Crew)
+# No ,Agent Component,Agent Role,Primary Goal,Key Tasks (in the Crew)
 1,Initialization,Retrieval Agent,Prepare the knowledge base (Pinecone) by processing and inserting document embeddings.,insert_embeddings_task (Setup)
 2,Retrieval,Retrieval Agent,Retrieve the most relevant text chunks from the vector store for the user's query.,retrieve_context_task (Query Execution)
 3,Reasoning,Reasoning Agent,"Analyze the retrieved context and generate a coherent, context-based draft answer.",generate_answer_task
